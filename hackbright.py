@@ -43,6 +43,7 @@ def make_new_student(first_name, last_name, github):
     db_cursor = db.session.execute(QUERY, {'first_name': first_name, 'last_name': last_name, 'github': github})
     db.session.commit()
     print "Successfully added student: %s %s" % (first_name, last_name)
+    
 
 
 def get_project_by_title(title):
@@ -163,7 +164,7 @@ if __name__ == "__main__":
     app = Flask(__name__)
     connect_to_db(app)
 
-    handle_input()
+    # handle_input()
 
     # To be tidy, we'll close our database connection -- though, since this
     # is where our program ends, we'd quit anyway.
